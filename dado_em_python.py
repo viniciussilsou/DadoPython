@@ -10,9 +10,18 @@ class SimuladorDeDado:
         self.mensagem = 'Deseja gerar novo numero do dado ?'
 
     def Iniciar(self):
+
         resposta = input(self.mensagem)
-        if resposta == 'sim':
-            self.GerarNumero()
+        try:
+            if resposta == 'sim' or resposta == 's':
+                self.GerarNumero()
+            elif resposta == 'não' or resposta == 'n':
+                print("Obrigado !")
+            else:
+                print("Favor Digitar sim ou não !")
+        except:
+            print("Ocorreu um erro ao executar o programa !")
+
 
     def GerarNumero(self):
 
